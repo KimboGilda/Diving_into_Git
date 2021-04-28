@@ -2104,10 +2104,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="creating-a-new-git-repository">Creating a new git repository</h2>
 <p>In most case scenarios there are two ways to encounter the issue of dealing with <strong>git</strong>. You either want to clone a git repository or take a local directory, which is not under any version control system, and turn it into a git repository.</p>
 <h3 id="initializing-a-repository-on-a-local-directory">Initializing a repository on a local directory</h3>
-<p>To do so, we have to follow the following steps: - via terminal, go to your local directory location &gt; <code>cd [path_to_your_project]</code><br />
-- type <code>git init</code>.<br />
-The later creates a new subdirectory named <strong>.git</strong> that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:<br />
-- type <code>git add .</code> &gt; so we can add all the non-tracked files to the staging area <em>Fig</em>.<a href="#fig:skeleton">1</a>.</p>
+<p>To do so, we have to follow the following steps:</p>
+<ul>
+<li><p>via terminal, go to your local directory location &gt; <code>cd [path_to_your_project]</code><br />
+</p></li>
+<li><p>type <code>git init</code>.<br />
+The later creates a new subdirectory named <strong>.git</strong> that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:</p></li>
+<li><p>type <code>git add .</code> &gt; so we can add all the non-tracked files to the staging area <em>Fig</em>.<a href="#fig:skeleton">1</a>.</p></li>
+</ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:skeleton"></span>
 <img src="images/git_skeleton.png" alt="The basic workflow of a git operation" width="50%" />

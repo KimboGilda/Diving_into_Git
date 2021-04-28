@@ -31,9 +31,11 @@ In most case scenarios there are two ways to encounter the issue of dealing with
 ### Initializing a repository on a local directory
 
 To do so, we have to follow the following steps:
+
 - via terminal, go to your local directory location > `cd [path_to_your_project]`  
 - type `git init`.  
-The later creates a new subdirectory named __.git__ that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:  
+The later creates a new subdirectory named __.git__ that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:
+
 - type `git add .` > so we can add all the non-tracked files to the staging area _Fig_.\@ref(fig:skeleton).
 
 ```{r skeleton, fig.align='center', message=FALSE, warning=FALSE, out.width='50%',paged.print=FALSE,fig.cap= "The basic workflow of a git operation"}
