@@ -2106,11 +2106,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="initializing-a-repository-on-a-local-directory">Initializing a repository on a local directory</h3>
 <p>To do so, we have to follow the following steps:</p>
 <ul>
-<li><p>via terminal, go to your local directory location &gt; <code>cd [path_to_your_project]</code><br />
+<li><p>via terminal go to your local directory location &gt; <code>cd [path_to_your_project]</code><br />
 </p></li>
-<li><p>type <code>git init</code>.<br />
-The later creates a new subdirectory named <strong>.git</strong> that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:</p></li>
-<li><p>type <code>git add .</code> &gt; so we can add all the non-tracked files to the staging area <em>Fig</em>.<a href="#fig:skeleton">1</a>.</p></li>
+<li><p>type <code>git init</code>. The later creates a new subdirectory named <strong>.git</strong> that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:</p></li>
+<li><p>type <code>git add .</code>That way we add all the non-tracked files to the staging area <em>Fig</em>.<a href="#fig:skeleton">1</a>.</p></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:skeleton"></span>
@@ -2121,7 +2120,7 @@ Figure 1: The basic workflow of a git operation
 </div>
 </div>
 <h3 id="working-with-an-existing-git-repo">Working with an existing git repo</h3>
-<p>In the second, quite common use case scenario, we are dealing with the cloning of an existing repository. To do so, we just have to copy the respective url, using the graphical user interface (gui) of a respective git hosting platform. In the figure below fig.<a href="#fig:url">2</a>, we are showcasing how this is performed with <strong>github</strong>.</p>
+<p>Quite often also arises the need of working with an existing <em>git repository</em>. In that case we have to clone the repo locally, so we can change something or even contribute to it by adding something else. To do so, we have to copy the respective repo’s <strong>url</strong>, using the graphical user interface (gui) of a git hosting platform. In the figure below fig.<a href="#fig:url">2</a>, we are showcasing how this is performed on <strong>github</strong>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span id="fig:url"></span>
 <img src="images/url.png" alt="Copying ssh url" width="100%" />
