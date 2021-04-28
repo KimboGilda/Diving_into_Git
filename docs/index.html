@@ -87,27 +87,27 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Diving into git</title>
 
-  <meta property="description" itemprop="description" content="akdöald"/>
+  <meta property="description" itemprop="description" content="A personal reminder of the basic git functionalities"/>
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Diving into git"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="akdöald"/>
+  <meta property="og:description" content="A personal reminder of the basic git functionalities"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Diving into git"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Diving into git"/>
-  <meta property="twitter:description" content="akdöald"/>
+  <meta property="twitter:description" content="A personal reminder of the basic git functionalities"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Diving into git"]},{"type":"character","attributes":{},"value":["akdöald"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc"]}},"value":[{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Diving into git"]},{"type":"character","attributes":{},"value":["A personal reminder of the basic git functionalities"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2052,7 +2052,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Diving into git","description":"akdöald","authors":[]}
+{"title":"Diving into git","description":"A personal reminder of the basic git functionalities","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2078,7 +2078,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Diving into git</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>akdöald</p>
+<p>A personal reminder of the basic git functionalities</p>
 </div>
 
 
@@ -2087,8 +2087,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#git-basics">GIT basics</a>
+<li><a href="#git-basics">Git basics</a>
 <ul>
+<li><a href="#creating-a-new-git-repository">Creating a new git repository</a></li>
 <li><a href="#adding-ssh-key">Adding SSH key</a></li>
 <li><a href="#pull-before-push">Pull before Push</a></li>
 <li><a href="#commit-history-via-command-line">Commit history via command line</a></li>
@@ -2096,9 +2097,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 </nav>
 </div>
-<h1 id="git-basics">GIT basics</h1>
+<h1 id="git-basics">Git basics</h1>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="images/gitProblems.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="images/gitProblems.png" width="70%" style="display: block; margin: auto;" /></p>
+</div>
+<h2 id="creating-a-new-git-repository">Creating a new git repository</h2>
+<p>In most case scenarios there are two ways to encounter the issue of dealing with <strong>git</strong>. You either want to clone a git repository or take a local directory, which is not under any version control system, and turn it into a git repository.</p>
+<h3 id="initializing-a-repository-on-a-local-directory">Initializing a repository on a local directory</h3>
+<p>To do so, we have to follow the following steps: - via terminal, go to your local directory location &gt; <code>cd [path_to_your_project]</code><br />
+- type <code>git init</code>.<br />
+The later creates a new subdirectory named <strong>.git</strong> that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:<br />
+- type <code>git add .</code> &gt; so we can add all the non-tracked files to the staging area <em>Fig</em>.<a href="#fig:skeleton">1</a>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure" style="text-align: center"><span id="fig:skeleton"></span>
+<img src="images/git_skeleton.png" alt="The basic workflow of a git operation" width="50%" />
+<p class="caption">
+Figure 1: The basic workflow of a git operation
+</p>
+</div>
+</div>
+<h3 id="working-with-an-existing-git-repo">Working with an existing git repo</h3>
+<p>In the second, quite common use case scenario, we are dealing with the cloning of an existing repository. To do so, we just have to copy the respective url, using the graphical user interface (gui) of a respective git hosting platform. In the figure below fig.<a href="#fig:url">2</a>, we are showcasing how this is performed with <strong>github</strong>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure" style="text-align: center"><span id="fig:url"></span>
+<img src="images/url.png" alt="Copying ssh url" width="100%" />
+<p class="caption">
+Figure 2: Copying ssh url
+</p>
+</div>
 </div>
 <p>There are cases where you have to deal with two different <code>SSH keys</code> on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active <code>SSH agent</code>.</p>
 <h2 id="adding-ssh-key">Adding SSH key</h2>

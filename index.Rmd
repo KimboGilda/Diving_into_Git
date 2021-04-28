@@ -1,9 +1,10 @@
 ---
 title: "Diving into git"
-description: akdöald
+description: A personal reminder of the basic git functionalities
 output:
   distill::distill_article:
     toc: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -17,11 +18,39 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-# GIT basics
+# Git basics
 
-```{r fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='70%', paged.print=FALSE}
 knitr::include_graphics('images/gitProblems.png')
 ```
+
+## Creating a new git repository
+
+In most case scenarios there are two ways to encounter the issue of dealing with **git**. You either want to clone a git repository or take a local directory, which is not under any version control system, and turn it into a git repository. 
+
+### Initializing a repository on a local directory
+
+To do so, we have to follow the following steps:
+- via terminal, go to your local directory location > `cd [path_to_your_project]`  
+- type `git init`.  
+The later creates a new subdirectory named __.git__ that contains all of your necessary repository files. At this point, in case there are existing files in your directory, they have to be tracked. To do so, we do the following:  
+- type `git add .` > so we can add all the non-tracked files to the staging area _Fig_.\@ref(fig:skeleton).
+
+```{r skeleton, fig.align='center', message=FALSE, warning=FALSE, out.width='50%',paged.print=FALSE,fig.cap= "The basic workflow of a git operation"}
+knitr::include_graphics('images/git_skeleton.png')
+```
+
+### Working with an existing git repo
+
+In the second, quite common use case scenario, we are dealing with the cloning of an existing repository. To do so, we just have to copy the respective url, using the graphical user interface (gui) of a respective git hosting platform. In the figure below fig.\@ref(fig:url), we are showcasing how this is performed with __github__.
+
+```{r url, fig.align='center', message=FALSE, warning=FALSE, out.width='100%',paged.print=FALSE,fig.cap= "Copying ssh url"}
+knitr::include_graphics('images/url.png')
+```
+
+
+
+
 
 There are cases where you have to deal with two different `SSH keys` on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active `SSH agent`.
 
