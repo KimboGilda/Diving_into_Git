@@ -1,0 +1,11 @@
+---
+title: "About this site"
+description: |
+  Some additional details about the website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This is an effort of documenting the basic knowledge a beginner **git** user will need for diving into the world of version control system. 

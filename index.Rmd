@@ -1,0 +1,76 @@
+---
+title: "Diving into git"
+description: akdöald
+output:
+  distill::distill_article:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+# GIT basics
+
+```{r fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+knitr::include_graphics('images/gitProblems.png')
+```
+
+There are cases where you have to deal with two different `SSH keys` on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active `SSH agent`.
+
+
+## Adding SSH key
+
+First of all we have to ensure that the **ssh-agent** is running. To do so, we do the following:
+
+````{bash, eval = FALSE}
+eval $(ssh-agent  -s)
+
+# add your private key to the ssh-agent
+# as an example we assume that our key is called "mykey"
+
+ssh-add ~/.ssh/mykey
+```
+
+
+## Pull before Push
+
+One quite common problem that arises in our first encounters with the beautiful world of `git` is when our commits are rejected _because the remote contains work that we do not have locally_. In this case, the first thing every user does, is to try to pull the data from the remote repository.
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+knitr::include_graphics('images/pullBpush.jpg')
+```
+
+Then the problem of potential conflicts arises. This can be resolved doing the following:
+
+- Write `i` (for insert) and press ENTER
+- Write your message
+- Click ESC
+- Write `:wq` and press ENTER
+
+
+## Commit history via command line
+
+To hard reset files to HEAD on Git, we can use the `git reset` command with the `-hard` option and then specify the `HEAD`.  
+Assuming that OUR branch is called **master** both locally and remotely and that your remote is called **origin** we could do the following:
+
+
+````{bash, eval = FALSE}
+
+git reset --hard HEAD # going back to HEAD
+
+git reset --hard HEAD^ # going back to the commit before HEAD
+
+git reset --hard HEAD~2 # going back two commits before HEAD
+```
+
+
+
+
