@@ -50,11 +50,19 @@ knitr::include_graphics('images/url.png')
 ```
 
 
+# git fetch vs git pull
 
+- **git fetch** really only downloads new data from a remote repository - but it doesn't integrate any of this new data into your working files. Fetch is great for getting a fresh view on all the things that happened in a remote repository.
+    - `git fetch origin`
+
+- **git pull**, in contrast, is used with a different goal in mind: to update your current HEAD branch with the latest changes from the remote server. This means that pull not only downloads new data; it also directly integrates it into your current working copy files. This has a couple of consequences:
+    - Since `git pull` tries to merge remote changes with your local ones, a so-called _merge conflict_ can occur.
+    - Like for many other actions, it's highly recommended to start a _git pull_ only with a clean working copy. This means that you        should not have any uncommitted local changes before you pull. Use _Git's Stash_ feature to save your local changes temporarily.
 
 
 There are cases where you have to deal with two different `SSH keys` on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active `SSH agent`.
 
+# Various cases -- 
 
 ## Adding SSH key
 

@@ -2090,6 +2090,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#git-basics">Git basics</a>
 <ul>
 <li><a href="#creating-a-new-git-repository">Creating a new git repository</a></li>
+</ul></li>
+<li><a href="#git-fetch-vs-git-pull">git fetch vs git pull</a></li>
+<li><a href="#various-cases">Various cases –</a>
+<ul>
 <li><a href="#adding-ssh-key">Adding SSH key</a></li>
 <li><a href="#pull-before-push">Pull before Push</a></li>
 <li><a href="#commit-history-via-command-line">Commit history via command line</a></li>
@@ -2129,7 +2133,20 @@ Figure 2: Copying ssh url
 </p>
 </div>
 </div>
+<h1 id="git-fetch-vs-git-pull">git fetch vs git pull</h1>
+<ul>
+<li><strong>git fetch</strong> really only downloads new data from a remote repository - but it doesn’t integrate any of this new data into your working files. Fetch is great for getting a fresh view on all the things that happened in a remote repository.
+<ul>
+<li><code>git fetch origin</code></li>
+</ul></li>
+<li><strong>git pull</strong>, in contrast, is used with a different goal in mind: to update your current HEAD branch with the latest changes from the remote server. This means that pull not only downloads new data; it also directly integrates it into your current working copy files. This has a couple of consequences:
+<ul>
+<li>Since <code>git pull</code> tries to merge remote changes with your local ones, a so-called <em>merge conflict</em> can occur.</li>
+<li>Like for many other actions, it’s highly recommended to start a <em>git pull</em> only with a clean working copy. This means that you should not have any uncommitted local changes before you pull. Use <em>Git’s Stash</em> feature to save your local changes temporarily.</li>
+</ul></li>
+</ul>
 <p>There are cases where you have to deal with two different <code>SSH keys</code> on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active <code>SSH agent</code>.</p>
+<h1 id="various-cases">Various cases –</h1>
 <h2 id="adding-ssh-key">Adding SSH key</h2>
 <p>First of all we have to ensure that the <strong>ssh-agent</strong> is running. To do so, we do the following:</p>
 <div class="layout-chunk" data-layout="l-body">
