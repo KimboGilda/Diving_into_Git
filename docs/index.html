@@ -2091,12 +2091,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <ul>
 <li><a href="#creating-a-new-git-repository">Creating a new git repository</a></li>
 </ul></li>
-<li><a href="#git-fetch-vs-git-pull">git fetch vs git pull</a></li>
-<li><a href="#various-cases">Various cases –</a>
+<li><a href="#git-fetch-vs-git-pull">git fetch vs git pull</a>
 <ul>
-<li><a href="#adding-ssh-key">Adding SSH key</a></li>
+<li><a href="#cloning-a-specific-branch">Cloning a specific branch</a></li>
 <li><a href="#pull-before-push">Pull before Push</a></li>
 <li><a href="#commit-history-via-command-line">Commit history via command line</a></li>
+<li><a href="#various-cases">Various cases</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2145,13 +2145,22 @@ Figure 2: Copying ssh url
 <li>Like for many other actions, it’s highly recommended to start a <em>git pull</em> only with a clean working copy. This means that you should not have any uncommitted local changes before you pull. Use <em>Git’s Stash</em> feature to save your local changes temporarily.</li>
 </ul></li>
 </ul>
-<p>There are cases where you have to deal with two different <code>SSH keys</code> on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active <code>SSH agent</code>.</p>
-<h1 id="various-cases">Various cases –</h1>
-<h2 id="adding-ssh-key">Adding SSH key</h2>
-<p>First of all we have to ensure that the <strong>ssh-agent</strong> is running. To do so, we do the following:</p>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
+<h2 id="cloning-a-specific-branch">Cloning a specific branch</h2>
+<p>Now let’s clone a specific branch from our demo repository. There are two ways to clone a specific branch. You can either:</p>
+<ul>
+<li>Clone the repository, fetch all branches, and checkout to a specific branch immediately.</li>
+<li>Clone the repository and fetch only a single branch.</li>
+</ul>
+<p><strong>Option one</strong></p>
+<ul>
+<li><p><code>git clone --branch &lt;branchname&gt; &lt;remote-repo-url&gt;</code> <em>OR</em></p></li>
+<li><p><code>git clone -b &lt;branchname&gt; &lt;remote-repo-url&gt;</code></p></li>
+</ul>
+<p><strong>Option Two</strong></p>
+<ul>
+<li><p><code>git clone --branch &lt;branchname&gt; --single-branch &lt;remote-repo-url&gt;</code> <em>OR</em></p></li>
+<li><p><code>git clone -b &lt;branchname&gt; --single-branch &lt;remote-repo-url&gt;</code></p></li>
+</ul>
 <h2 id="pull-before-push">Pull before Push</h2>
 <p>One quite common problem that arises in our first encounters with the beautiful world of <code>git</code> is when our commits are rejected <em>because the remote contains work that we do not have locally</em>. In this case, the first thing every user does, is to try to pull the data from the remote repository.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2167,6 +2176,13 @@ Figure 2: Copying ssh url
 <h2 id="commit-history-via-command-line">Commit history via command line</h2>
 <p>To hard reset files to HEAD on Git, we can use the <code>git reset</code> command with the <code>-hard</code> option and then specify the <code>HEAD</code>.<br />
 Assuming that OUR branch is called <strong>master</strong> both locally and remotely and that your remote is called <strong>origin</strong> we could do the following:</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="various-cases">Various cases</h2>
+<p>There are cases where you have to deal with two different <code>SSH keys</code> on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active <code>SSH agent</code>.</p>
+<h3 id="adding-ssh-key">Adding SSH key</h3>
+<p>First of all we have to ensure that the <strong>ssh-agent</strong> is running. To do so, we do the following:</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
