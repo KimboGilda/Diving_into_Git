@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-# Git basics
+# git basics
 
 ```{r fig.align='center', message=FALSE, warning=FALSE, out.width='70%', paged.print=FALSE}
 knitr::include_graphics('images/gitProblems.png')
@@ -49,8 +49,9 @@ Quite often also arises the need of working with an existing _git repository_. I
 knitr::include_graphics('images/url.png')
 ```
 
+# basic git commands
 
-# git fetch vs git pull
+## git fetch vs git pull
 
 - **git fetch** really only downloads new data from a remote repository - but it doesn't integrate any of this new data into your working files. Fetch is great for getting a fresh view on all the things that happened in a remote repository.
     - `git fetch origin`
@@ -61,7 +62,7 @@ knitr::include_graphics('images/url.png')
 
 
 
-## Cloning a specific branch
+## cloning a specific branch
 Now let's clone a specific branch from our demo repository. There are two ways to clone a specific branch. You can either:
 
 - Clone the repository, fetch all branches, and checkout to a specific branch immediately.
@@ -81,7 +82,7 @@ Now let's clone a specific branch from our demo repository. There are two ways t
 - `git clone -b <branchname> --single-branch <remote-repo-url>`
 
 
-## Pull before Push
+## pull before push
 
 One quite common problem that arises in our first encounters with the beautiful world of `git` is when our commits are rejected _because the remote contains work that we do not have locally_. In this case, the first thing every user does, is to try to pull the data from the remote repository.
 
@@ -97,7 +98,7 @@ Then the problem of potential conflicts arises. This can be resolved doing the f
 - Write `:wq` and press ENTER
 
 
-## Commit history via command line
+## commit history via command line
 
 To hard reset files to HEAD on Git, we can use the `git reset` command with the `-hard` option and then specify the `HEAD`.  
 Assuming that OUR branch is called **master** both locally and remotely and that your remote is called **origin** we could do the following:
@@ -112,11 +113,11 @@ git reset --hard HEAD^ # going back to the commit before HEAD
 git reset --hard HEAD~2 # going back two commits before HEAD
 ```
 
-## Various cases
+## various cases
 
 There are cases where you have to deal with two different `SSH keys` on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active `SSH agent`.
 
-### Adding SSH key
+### adding an SSH key
 
 First of all we have to ensure that the **ssh-agent** is running. To do so, we do the following:
 

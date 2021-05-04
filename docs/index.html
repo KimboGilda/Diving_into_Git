@@ -2087,21 +2087,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#git-basics">Git basics</a>
+<li><a href="#git-basics">git basics</a>
 <ul>
 <li><a href="#creating-a-new-git-repository">Creating a new git repository</a></li>
 </ul></li>
-<li><a href="#git-fetch-vs-git-pull">git fetch vs git pull</a>
+<li><a href="#basic-git-commands">basic git commands</a>
 <ul>
-<li><a href="#cloning-a-specific-branch">Cloning a specific branch</a></li>
-<li><a href="#pull-before-push">Pull before Push</a></li>
-<li><a href="#commit-history-via-command-line">Commit history via command line</a></li>
-<li><a href="#various-cases">Various cases</a></li>
+<li><a href="#git-fetch-vs-git-pull">git fetch vs git pull</a></li>
+<li><a href="#cloning-a-specific-branch">cloning a specific branch</a></li>
+<li><a href="#pull-before-push">pull before push</a></li>
+<li><a href="#commit-history-via-command-line">commit history via command line</a></li>
+<li><a href="#various-cases">various cases</a></li>
 </ul></li>
 </ul>
 </nav>
 </div>
-<h1 id="git-basics">Git basics</h1>
+<h1 id="git-basics">git basics</h1>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/gitProblems.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
@@ -2133,7 +2134,8 @@ Figure 2: Copying ssh url
 </p>
 </div>
 </div>
-<h1 id="git-fetch-vs-git-pull">git fetch vs git pull</h1>
+<h1 id="basic-git-commands">basic git commands</h1>
+<h2 id="git-fetch-vs-git-pull">git fetch vs git pull</h2>
 <ul>
 <li><strong>git fetch</strong> really only downloads new data from a remote repository - but it doesn’t integrate any of this new data into your working files. Fetch is great for getting a fresh view on all the things that happened in a remote repository.
 <ul>
@@ -2145,7 +2147,7 @@ Figure 2: Copying ssh url
 <li>Like for many other actions, it’s highly recommended to start a <em>git pull</em> only with a clean working copy. This means that you should not have any uncommitted local changes before you pull. Use <em>Git’s Stash</em> feature to save your local changes temporarily.</li>
 </ul></li>
 </ul>
-<h2 id="cloning-a-specific-branch">Cloning a specific branch</h2>
+<h2 id="cloning-a-specific-branch">cloning a specific branch</h2>
 <p>Now let’s clone a specific branch from our demo repository. There are two ways to clone a specific branch. You can either:</p>
 <ul>
 <li>Clone the repository, fetch all branches, and checkout to a specific branch immediately.</li>
@@ -2161,7 +2163,7 @@ Figure 2: Copying ssh url
 <li><p><code>git clone --branch &lt;branchname&gt; --single-branch &lt;remote-repo-url&gt;</code> <em>OR</em></p></li>
 <li><p><code>git clone -b &lt;branchname&gt; --single-branch &lt;remote-repo-url&gt;</code></p></li>
 </ul>
-<h2 id="pull-before-push">Pull before Push</h2>
+<h2 id="pull-before-push">pull before push</h2>
 <p>One quite common problem that arises in our first encounters with the beautiful world of <code>git</code> is when our commits are rejected <em>because the remote contains work that we do not have locally</em>. In this case, the first thing every user does, is to try to pull the data from the remote repository.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/pullBpush.jpg" width="100%" style="display: block; margin: auto;" /></p>
@@ -2173,15 +2175,15 @@ Figure 2: Copying ssh url
 <li>Click ESC</li>
 <li>Write <code>:wq</code> and press ENTER</li>
 </ul>
-<h2 id="commit-history-via-command-line">Commit history via command line</h2>
+<h2 id="commit-history-via-command-line">commit history via command line</h2>
 <p>To hard reset files to HEAD on Git, we can use the <code>git reset</code> command with the <code>-hard</code> option and then specify the <code>HEAD</code>.<br />
 Assuming that OUR branch is called <strong>master</strong> both locally and remotely and that your remote is called <strong>origin</strong> we could do the following:</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h2 id="various-cases">Various cases</h2>
+<h2 id="various-cases">various cases</h2>
 <p>There are cases where you have to deal with two different <code>SSH keys</code> on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active <code>SSH agent</code>.</p>
-<h3 id="adding-ssh-key">Adding SSH key</h3>
+<h3 id="adding-an-ssh-key">adding an SSH key</h3>
 <p>First of all we have to ensure that the <strong>ssh-agent</strong> is running. To do so, we do the following:</p>
 <div class="layout-chunk" data-layout="l-body">
 
