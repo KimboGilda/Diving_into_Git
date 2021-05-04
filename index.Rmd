@@ -60,22 +60,25 @@ knitr::include_graphics('images/url.png')
     - Like for many other actions, it's highly recommended to start a _git pull_ only with a clean working copy. This means that you        should not have any uncommitted local changes before you pull. Use _Git's Stash_ feature to save your local changes temporarily.
 
 
-There are cases where you have to deal with two different `SSH keys` on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active `SSH agent`.
 
-# Various cases -- 
+## Cloning a specific branch
+Now let's clone a specific branch from our demo repository. There are two ways to clone a specific branch. You can either:
 
-## Adding SSH key
+- Clone the repository, fetch all branches, and checkout to a specific branch immediately.
+- Clone the repository and fetch only a single branch.
 
-First of all we have to ensure that the **ssh-agent** is running. To do so, we do the following:
+**Option one**
 
-````{bash, eval = FALSE}
-eval $(ssh-agent  -s)
+- `git clone --branch <branchname> <remote-repo-url>` _OR_
 
-# add your private key to the ssh-agent
-# as an example we assume that our key is called "mykey"
+- `git clone -b <branchname> <remote-repo-url>`
 
-ssh-add ~/.ssh/mykey
-```
+
+**Option Two**
+
+- `git clone --branch <branchname> --single-branch <remote-repo-url>` _OR_
+
+- `git clone -b <branchname> --single-branch <remote-repo-url>`
 
 
 ## Pull before Push
@@ -108,6 +111,29 @@ git reset --hard HEAD^ # going back to the commit before HEAD
 
 git reset --hard HEAD~2 # going back two commits before HEAD
 ```
+
+## Various cases
+
+There are cases where you have to deal with two different `SSH keys` on your accounts. In most cases you have to deal with a personal account as well as an organisational account. In these cases we have to deal with adding the one of the two keys into the active `SSH agent`.
+
+### Adding SSH key
+
+First of all we have to ensure that the **ssh-agent** is running. To do so, we do the following:
+
+````{bash, eval = FALSE}
+eval $(ssh-agent  -s)
+
+# add your private key to the ssh-agent
+# as an example we assume that our key is called "mykey"
+
+ssh-add ~/.ssh/mykey
+```
+
+
+
+
+
+
 
 
 
