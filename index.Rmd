@@ -81,6 +81,14 @@ Now let's clone a specific branch from our demo repository. There are two ways t
 
 - `git clone -b <branchname> --single-branch <remote-repo-url>`
 
+## diff between a local and a remote branch
+
+Let's assume we want to see the difference between a local branch (*bako_dev*) and remote one (*origin/bako_dev*). To do so we type the following:
+
+- `git diff bako_dev origin_bako_dev`  
+
+Immediately we will be transfered in a _vi environment_, where all the differences appear. To exit the _vi_environment_, we simply type **q**.
+
 
 ## pull before push
 
